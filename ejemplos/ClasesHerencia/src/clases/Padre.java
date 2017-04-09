@@ -18,6 +18,14 @@ public class Padre {
 		Padre.nombreClase = nombreClase;
 	}
 	
+	public Padre(){
+		this.setNombre("Padre");
+	}
+	
+	public Padre(String nombre){
+		this.setNombre(nombre);
+	}
+	
 	public String getDesc(){
 		return "Objeto: "+this.getNombre();
 	}
