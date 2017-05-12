@@ -91,8 +91,20 @@ public class AMBCPersona extends JFrame {
 		});
 		
 		JButton btnBorrar = new JButton("Borrar");
+		btnBorrar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				borrarClick();
+			}
+		});
 		
 		JButton btnModificar = new JButton("Modificar");
+		btnModificar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				modificarClick();
+			}
+		});
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -157,6 +169,15 @@ public class AMBCPersona extends JFrame {
 	protected void agregarClick(){
 		ctrl.add(this.mapearDeForm());
 	}
+	
+	protected void borrarClick(){
+		ctrl.delete(this.mapearDeForm());
+	}
+	
+	protected void modificarClick(){
+		ctrl.update(this.mapearDeForm());
+	}
+
 	
 	private void mapearAForm(Persona p){
 		this.txtDni.setText(p.getDni());

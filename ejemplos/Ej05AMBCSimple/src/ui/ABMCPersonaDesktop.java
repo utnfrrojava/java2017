@@ -3,7 +3,7 @@ package ui;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -19,8 +19,9 @@ import javax.swing.JCheckBox;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JFrame;
 
-public class ABMCPersonaDesktop extends JFrame {
+public class ABMCPersonaDesktop extends JInternalFrame {
 
 	private CtrlABMPersona ctrl=new CtrlABMPersona();
 	
@@ -53,7 +54,8 @@ public class ABMCPersonaDesktop extends JFrame {
 	 * Create the frame.
 	 */
 	public ABMCPersonaDesktop() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setClosable(true);
+		setDefaultCloseOperation(JInternalFrame.HIDE_ON_CLOSE);
 		setBounds(100, 100, 328, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -199,5 +201,4 @@ public class ABMCPersonaDesktop extends JFrame {
 		p.setHabilitado(this.chkHabilitado.isSelected());
 		return p;
 	}
-
 }
