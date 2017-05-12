@@ -32,7 +32,7 @@ Ambas carpetas son workspace de eclipse pero fueron excluidos los archivos de ec
 
 2. *Colecciones*
     1. [Uso de ArrayList](./ejemplos/EjemploArrayList/src/ejemploBase/Principal.java).
-    2. *Ejercicio 4:* [enunciado](./readme.md).
+    2. *Ejercicio 4:* [enunciado](./enunciados/readme.md).
 
 3. *Objetos y Clases:*
   1. [Herencia](./ejemplos/ClasesHerencia/src/clases/): Manejo de clases, herencia y redefinición.
@@ -41,10 +41,10 @@ Ambas carpetas son workspace de eclipse pero fueron excluidos los archivos de ec
 
 4. *Escritorio*
   1. [Uso de JFrame, JInternalFrame y JOptionPane](./).
-  2. *Ejercicio 5:* [enunciado](./ejercicios/readme.md).
+  2. *Ejercicio 5:* [enunciado](./enunciados/readme.md).
 
 5. *Capas*
-  1. *Ejercicio 5:* [enunciado](./ejercicios/readme.md).
+  1. *Ejercicio 5:* [enunciado](./enunciados/readme.md).
 
 6. *JDBC*
 
