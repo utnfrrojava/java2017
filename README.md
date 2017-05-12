@@ -26,9 +26,9 @@ Ambas carpetas son workspace de eclipse pero fueron excluidos los archivos de ec
 1. *Sintaxis:*
   1. [Uso de scanner](./ejemplos/Ejemplos/src/ejemplo/UsoScanner.java): Leer datos por consola.
   2. [Ejemplo de sintaxis](./ejemplos/Ejemplos/src/ejemplo/Principal.java): Uso de if, for, foreach, arrays.
-  3. *Ejercicio 1:* [enunciado](./enunciados.md) y [resolucion](./ejemplos/Ej01MostrarArrayEnOrdenInverso/ej01/MostrarArrayEnOrdenInverso.java).
-  4. *Ejercicio 2:* [enunciado](./enunciados.md) y [resolucion](./ejemplos/Ej02RegistrarNumerosMayores/src/ej02_1/RegistrarNumerosMayoresArray.java).
-  5. *Ejercicio 4:* [enunciado](./enunciados.md) y [resolucion](./ejemplos/Ej02RegistrarNumerosMayores/src/ej02_1/RegistrarNumerosMayoresArray.java).
+  3. *Ejercicio 1:* [enunciado](./enunciados/readme.md) y [resolucion](./ejemplos/Ej01MostrarArrayEnOrdenInverso/ej01/MostrarArrayEnOrdenInverso.java).
+  4. *Ejercicio 2:* [enunciado](./enunciados/readme.md) y [resolucion](./ejemplos/Ej02RegistrarNumerosMayores/src/ej02_1/RegistrarNumerosMayoresArray.java).
+  5. *Ejercicio 4:* [enunciado](./enunciados/readme.md) y [resolucion](./ejemplos/Ej02RegistrarNumerosMayores/src/ej02_1/RegistrarNumerosMayoresArray.java).
 
 2. *Colecciones*
     1. [Uso de ArrayList](./ejemplos/EjemploArrayList/src/ejemploBase/Principal.java).

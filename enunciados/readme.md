@@ -36,7 +36,7 @@ Crear un ABMC simple para personas según las siguientes características:
 * De las personas debe registrarse: Nombre, Apellido, DNI y habilitado (estado booleano)
 * El desarrollo se hará teniendo en cuenta el uso de capas como se muestra en la imagen del Equema de Capas. Por ahora sólo se utilizarán las capas de Entidades, Lógica y UI.
 
-![Capas](./img/Ej05-EsquemaCapas.png)
+![Capas](./img/EsquemaCapas.png)
 
 Crear la solución teniendo en cuenta estos 4 elementos:
 
