@@ -18,7 +18,7 @@ Para conocer las condiciones del sistema final referirse al [repositorio general
 El archivo [recursos.md](https://github.com/utnfrrojava/java/blob/master/material/recursos.md) contiene links a muchos tutoriales tanto de java como de desarrollo web.
 
 ## Material de clases
-Los ejemplos de clase se encuentran en la carpeta [ejemplos-clase](./ejemplos/) y los ejercicios realizados en clase se encuentran en la carpeta [ejercicios](./ejercicios).
+Los ejemplos y ejercicios de clase se encuentran en la carpeta [ejemplos](./ejemplos/).
 
 Ambas carpetas son workspace de eclipse pero fueron excluidos los archivos de eclipse para que fuera sencillo utilizarlo desde otros IDEs o versiones de eclipse.
 
