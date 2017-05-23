@@ -38,4 +38,17 @@ public class Persona {
 	}
 	
 	public Persona(){}
+	
+	@Override
+	public boolean equals(Object p){
+		return (p instanceof Persona) &&
+			 (((Persona)p).getDni().equals(this.getDni()));
+					
+
+	}
 }
+
+
+
+
+
