@@ -28,7 +28,9 @@ La aplicación deberá desarrollarse en equipos utilizando un repositorio git us
 
 
 ***Promoción***
-Inicialmente se expondrán las condiciones de regularidad y a continuación los adicionales de promoción. Cada adicional tiene un puntaje, para promocionar deberá acumular 5 puntos mediante requerimientos de promoción y realizar una tercer entrega con los adicionales y haber publicado el sistema en un servidor gratuito en la web
+Inicialmente se expondrán las condiciones de regularidad y a continuación los adicionales de promoción. Cada adicional tiene un puntaje máximo, según la ejecución pueden otorgarse entre 0 y ese máximo.
+
+Para promocionar deberá acumular 5 puntos mediante requerimientos de promoción y realizar una tercer entrega con los adicionales habiendo publicado el sistema en un servidor web gratuito.
 
 ##### Fechas de Entrega
 
