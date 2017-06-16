@@ -4,7 +4,7 @@
 
 ### *ASIGNATURA: "LENGUAJE DE PROGRAMACIÓN: JAVA"*
 
-#### *TP1* - Curso Lectivo 2016
+#### *TP1* - Curso Lectivo 2017
 
 ##### Equipo Docente
 - Ing. Ricardo Tabacman
@@ -30,7 +30,7 @@ La aplicación deberá desarrollarse en equipos utilizando un repositorio git us
 ***Promoción***
 Inicialmente se expondrán las condiciones de regularidad y a continuación los adicionales de promoción. Cada adicional tiene un puntaje máximo, según la ejecución pueden otorgarse entre 0 y ese máximo.
 
-Para promocionar deberá acumular 5 puntos mediante requerimientos de promoción y realizar una tercer entrega con los adicionales habiendo publicado el sistema en un servidor web gratuito.
+Para promocionar deberá acumular 6 puntos mediante requerimientos de promoción y realizar una tercer entrega con los adicionales habiendo publicado el sistema en un servidor web gratuito.
 
 ##### Fechas de Entrega
 
@@ -79,11 +79,11 @@ Para alcanzar la promoción a lo antes requerido se agregan los siguientes reque
   - Las personas deben tener una categoría (encargado, admin o usuario).
   - Los tipos de elementos pueden exigir que sólo un encargado pueda reserver elementos de dicho tipo.
 
-- Req 2: 4 puntos
+- Req 2: 3.5 puntos
   - Los tipos de elementos pueden tener un límite máximo de tiempo de reserva (en horas) que debe controlarse durante la reserva.
   - Los tipos de elementos puden tener una cantidad máxima de días de anticipación para ser reservados.
 
-- Req 3: 3 puntos
+- Req 3: 2.5 puntos
   - Los administradores son los únicos que pueden crear usuarios y tipos de elementos.
   - Los administradores son quienes pueden habilitar o deshabilitar usuarios.
   - Los administradores pueden anular cualquier reserva pendiente, por lo que deben poder ver todas las reservas disponibles.
@@ -93,3 +93,6 @@ Para alcanzar la promoción a lo antes requerido se agregan los siguientes reque
 
 - Req 5: 1 punto
   - Enviar emails para confirmar reservas, cancelaciones y anulación.
+
+- Req 6: 1 punto
+  - Permitir reset de password de los usuarios.
