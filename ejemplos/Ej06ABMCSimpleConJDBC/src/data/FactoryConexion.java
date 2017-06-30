@@ -34,7 +34,7 @@ public class FactoryConexion {
 	private int cantConn=0;
 	public Connection getConn(){
 		try {
-			if(conn==null || conn.isClosed()){
+			if(conn==null || conn.isClosed()){	
 				conn = DriverManager.getConnection(
 			        "jdbc:mysql://"+host+":"+port+"/"+db+"?user="+user+"&password="+password);
 			}
@@ -48,12 +48,13 @@ public class FactoryConexion {
 	public void releaseConn(){
 		try {
 			cantConn--;
-			if (cantConn==0){
+			if(cantConn==0){
 				conn.close();
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
+	
 
 }

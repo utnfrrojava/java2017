@@ -1,6 +1,7 @@
 package data;
 
 import java.util.ArrayList;
+import java.security.KeyStore.ProtectionParameter;
 import java.sql.*;
 
 import entity.*;
@@ -19,6 +20,7 @@ public class DataPersona {
 			if(rs!=null){
 				while(rs.next()){
 					Persona p=new Persona();
+					p.setId(rs.getInt("id"));
 					p.setNombre(rs.getString("nombre"));
 					p.setApellido(rs.getString("apellido"));
 					p.setDni(rs.getString("dni"));
@@ -47,19 +49,20 @@ public class DataPersona {
 	
 	public Persona getByDni(Persona per){
 		Persona p=null;
+		PreparedStatement stmt=null;
 		ResultSet rs=null;
-		PreparedStatement stmt =null;
 		try {
-			stmt= FactoryConexion.getInstancia().getConn().prepareStatement(		
-					"select nombre, apellido, dni, habilitado from persona where dni=?");
+			stmt=FactoryConexion.getInstancia().getConn().prepareStatement(
+					"select id, nombre, apellido, dni, habilitado from persona where dni=?");
 			stmt.setString(1, per.getDni());
-			rs = stmt.executeQuery();
+			rs=stmt.executeQuery();
 			if(rs!=null && rs.next()){
-				p=new Persona();
-				p.setNombre(rs.getString("nombre"));
-				p.setApellido(rs.getString("apellido"));
-				p.setDni(rs.getString("dni"));
-				p.setHabilitado(rs.getBoolean("habilitado"));
+					p=new Persona();
+					p.setId(rs.getInt("id"));
+					p.setNombre(rs.getString("nombre"));
+					p.setApellido(rs.getString("apellido"));
+					p.setDni(rs.getString("dni"));
+					p.setHabilitado(rs.getBoolean("habilitado"));
 			}
 			
 		} catch (SQLException e) {
@@ -67,14 +70,46 @@ public class DataPersona {
 		}
 		
 		try {
-			if(rs!=null) rs.close();
-			if(stmt!=null) stmt.close();
+			if(rs!=null)rs.close();
+			if(stmt!=null)stmt.close();
 			FactoryConexion.getInstancia().releaseConn();
 		} catch (SQLException e) {
-			
 			e.printStackTrace();
 		}
+		
 		return p;
 	}
+	
+	public void add(Persona p){
+		PreparedStatement stmt=null;
+		ResultSet keyResultSet=null;
+		try {
+			stmt=FactoryConexion.getInstancia().getConn()
+					.prepareStatement(
+					"insert into persona(dni, nombre, apellido, habilitado) values (?,?,?,?)",
+					PreparedStatement.RETURN_GENERATED_KEYS
+					);
+			stmt.setString(1, p.getDni());
+			stmt.setString(2, p.getNombre());
+			stmt.setString(3, p.getApellido());
+			stmt.setBoolean(4, p.isHabilitado());
+			stmt.executeUpdate();
+			keyResultSet=stmt.getGeneratedKeys();
+			if(keyResultSet!=null && keyResultSet.next()){
+				p.setId(keyResultSet.getInt(1));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		try {
+			if(keyResultSet!=null)keyResultSet.close();
+			if(stmt!=null)stmt.close();
+			FactoryConexion.getInstancia().releaseConn();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
 
 }

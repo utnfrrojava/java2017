@@ -20,7 +20,8 @@ public class CtrlABMPersona {
 	}
 	
 	public void add(Persona p) {
-		this.pers.add(p);
+		//this.pers.add(p);
+		dataPer.add(p);
 	}
 	
 	public void delete(Persona p){
@@ -34,7 +35,7 @@ public class CtrlABMPersona {
 	}
 	
 	public Persona getByDni(Persona p){
-		return dataPer.getByDni(p);
+		return this.dataPer.getByDni(p);
 		//return this.getByDni(p.getDni());
 	}
 	
