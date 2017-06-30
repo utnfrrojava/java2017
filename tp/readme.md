@@ -61,7 +61,7 @@ La gestión de personas incluye:
 La misma comprende ABMC de tipos de elementos con los siguientes datos:
   - id: autoincremental numérico generado por la DB.
   - nombre: texto corto, por ejemplo: proyector, cochera, notebook.
-  - cantidad máximas de reservas pendientes: es la cantidad máxima de elementos de este tipo que se pueden tener a futuro. ***Nota:*** *Ver adicional de promoción.*
+  - cantidad máximas de reservas pendientes: es la cantidad máxima de elementos de este tipo que cada usuario puede tener pendiente a futuro. ***Nota:*** *Ver adicional de promoción.*
 
 ###### Gestión de elementos a reservar
 Comprende el ABMC de de los elementos a reservar con los siguientes datos:
@@ -92,7 +92,4 @@ Para alcanzar la promoción a lo antes requerido se agregan los siguientes reque
   - Usar custom exceptions y log de errores.
 
 - Req 5: 1 punto
-  - Enviar emails para confirmar reservas, cancelaciones y anulación.
-
-- Req 6: 1 punto
-  - Permitir reset de password de los usuarios.
+  - Enviar emails para confirmar reservas, cancelaciones y anulaci
