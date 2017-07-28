@@ -19,27 +19,27 @@ public class CtrlABMPersona {
 		pers.add(new Persona("13131313","Fulano", "De Tal",true));
 	}
 	
-	public void add(Persona p) {
+	public void add(Persona p) throws Exception{
 		//this.pers.add(p);
 		dataPer.add(p);
 	}
 	
-	public void delete(Persona p){
+	public void delete(Persona p)throws Exception{
 		//this.pers.remove(this.getByDni(p));
 		this.pers.remove(p);
 	}
 	
-	public void update(Persona p){
+	public void update(Persona p)throws Exception{
 		this.delete(p);
 		this.add(p);
 	}
 	
-	public Persona getByDni(Persona p){
+	public Persona getByDni(Persona p) throws Exception{
 		return this.dataPer.getByDni(p);
 		//return this.getByDni(p.getDni());
 	}
 	
-	public Persona getByDni(String dni){
+	public Persona getByDni(String dni)throws Exception{
 		Persona p=new Persona();
 		p.setDni(dni);
 		return getByDni(p);
@@ -65,7 +65,7 @@ public class CtrlABMPersona {
 		
 	}
 	
-	public ArrayList<Persona> getAll(){
+	public ArrayList<Persona> getAll()throws Exception{
 		//return this.pers;
 		return dataPer.getAll();
 	}

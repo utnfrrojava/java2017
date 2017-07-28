@@ -66,7 +66,11 @@ public class ABMCPersonaConsole {
 		}else if (h.equalsIgnoreCase("N")) {
 			p.setHabilitado(false);
 		}
-		ctrl.add(p);
+		try {
+			ctrl.add(p);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	private void baja(){
@@ -75,7 +79,11 @@ public class ABMCPersonaConsole {
 		Persona p=new Persona();
 		System.out.println("Ingrese DNI:");
 		p.setDni(s.nextLine());
-		ctrl.delete(p);
+		try {
+			ctrl.delete(p);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 	}
 	
@@ -85,7 +93,11 @@ public class ABMCPersonaConsole {
 		System.out.println("#############");
 		System.out.println("Ingrese DNI:");
 		p.setDni(s.nextLine());
-		this.mostrar(ctrl.getByDni(p));
+		try {
+			this.mostrar(ctrl.getByDni(p));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		System.out.println("\nIngrese Nuevo Nombre");
 		p.setNombre(s.nextLine());
@@ -98,7 +110,11 @@ public class ABMCPersonaConsole {
 		}else if (h.equalsIgnoreCase("N")) {
 			p.setHabilitado(false);
 		}
-		ctrl.update(p);
+		try {
+			ctrl.update(p);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	private void consulta(){
@@ -112,12 +128,20 @@ public class ABMCPersonaConsole {
 		String rta=s.nextLine();
 		switch (rta) {
 		case "1":
-			this.mostrar(ctrl.getAll());
+			try {
+				this.mostrar(ctrl.getAll());
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
 			break;
 		case "2":
 			System.out.println("Ingrese DNI:");
 			p.setDni(s.nextLine());
-			this.mostrar(ctrl.getByDni(p));
+			try {
+				this.mostrar(ctrl.getByDni(p));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			
 			break;
 		case "3":

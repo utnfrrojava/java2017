@@ -1,6 +1,8 @@
 package data;
 import java.sql.*;
 
+import util.AppDataException;
+
 
 public class FactoryConexion {
 	
@@ -8,7 +10,7 @@ public class FactoryConexion {
 	private String host="localhost";
 	private String port="3306";
 	private String user="java";
-	private String password="java";
+	private String password="javaMalPassword";
 	private String db="java2017";
 	
 	private static FactoryConexion instancia;
@@ -32,27 +34,27 @@ public class FactoryConexion {
 	
 	private Connection conn;
 	private int cantConn=0;
-	public Connection getConn(){
+	public Connection getConn() throws SQLException,AppDataException{
 		try {
 			if(conn==null || conn.isClosed()){	
 				conn = DriverManager.getConnection(
 			        "jdbc:mysql://"+host+":"+port+"/"+db+"?user="+user+"&password="+password);
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
+			throw new AppDataException(e, "Error al conectar a la base de datos");
 		}
 		cantConn++;
 		return conn;
 	}
 	
-	public void releaseConn(){
+	public void releaseConn() throws SQLException{
 		try {
 			cantConn--;
 			if(cantConn==0){
 				conn.close();
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
+			throw e;
 		}
 	}
 	

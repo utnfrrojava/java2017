@@ -13,6 +13,7 @@ import entity.Persona;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JCheckBox;
@@ -185,23 +186,39 @@ public class ABMCPersonaDesktop extends JInternalFrame {
 	}
 
 	protected void buscarClick() {
-		this.mapearAForm(ctrl.getByDni(this.mapearDeForm()));
+		try {
+			this.mapearAForm(ctrl.getByDni(this.mapearDeForm()));
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(this, e.getMessage());
+		}
 		
 	}
 	
-	protected void agregarClick(){
+	protected void agregarClick() {
 		Persona p = this.mapearDeForm();
-		ctrl.add(p);
+		try{
+			ctrl.add(p);
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(this, e.getMessage());
+		}
 		this.txtId.setText(String.valueOf(p.getId()));
 		
 	}
 	
 	protected void borrarClick(){
-		ctrl.delete(this.mapearDeForm());
+		try{
+			ctrl.delete(this.mapearDeForm());
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(this, e.getMessage());
+		}
 	}
 	
 	protected void modificarClick(){
-		ctrl.update(this.mapearDeForm());
+		try{
+			ctrl.update(this.mapearDeForm());
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(this, e.getMessage());
+		}
 	}
 	
 	private void mapearAForm(Persona p){

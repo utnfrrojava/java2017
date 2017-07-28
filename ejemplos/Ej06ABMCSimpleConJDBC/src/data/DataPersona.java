@@ -1,14 +1,18 @@
 package data;
 
 import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
 import java.security.KeyStore.ProtectionParameter;
 import java.sql.*;
 
 import entity.*;
+import util.AppDataException;
 
 public class DataPersona {
 	
-	public ArrayList<Persona> getAll(){
+	public ArrayList<Persona> getAll() throws Exception{
 	
 		Statement stmt=null;
 		ResultSet rs=null;
@@ -30,7 +34,9 @@ public class DataPersona {
 			}
 		} catch (SQLException e) {
 			
-			e.printStackTrace();
+			throw e;
+		} catch (AppDataException ade){
+			throw ade;
 		}
 		
 
@@ -47,7 +53,7 @@ public class DataPersona {
 		
 	}
 	
-	public Persona getByDni(Persona per){
+	public Persona getByDni(Persona per) throws Exception{
 		Persona p=null;
 		PreparedStatement stmt=null;
 		ResultSet rs=null;
@@ -65,22 +71,21 @@ public class DataPersona {
 					p.setHabilitado(rs.getBoolean("habilitado"));
 			}
 			
-		} catch (SQLException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
+			throw e;
+		} finally{
+			try {
+				if(rs!=null)rs.close();
+				if(stmt!=null)stmt.close();
+				FactoryConexion.getInstancia().releaseConn();
+			} catch (SQLException e) {
+				throw e;
+			}
 		}
-		
-		try {
-			if(rs!=null)rs.close();
-			if(stmt!=null)stmt.close();
-			FactoryConexion.getInstancia().releaseConn();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		
 		return p;
 	}
 	
-	public void add(Persona p){
+	public void add(Persona p) throws Exception{
 		PreparedStatement stmt=null;
 		ResultSet keyResultSet=null;
 		try {
@@ -98,8 +103,8 @@ public class DataPersona {
 			if(keyResultSet!=null && keyResultSet.next()){
 				p.setId(keyResultSet.getInt(1));
 			}
-		} catch (SQLException e) {
-			e.printStackTrace();
+		} catch (SQLException | AppDataException e) {
+			throw e;
 		}
 		try {
 			if(keyResultSet!=null)keyResultSet.close();

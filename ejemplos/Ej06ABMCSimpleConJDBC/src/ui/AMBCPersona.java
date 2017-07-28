@@ -13,6 +13,7 @@ import entity.Persona;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JCheckBox;
@@ -162,20 +163,36 @@ public class AMBCPersona extends JFrame {
 	}
 
 	protected void buscarClick() {
-		this.mapearAForm(ctrl.getByDni(this.mapearDeForm()));
+		try {
+			this.mapearAForm(ctrl.getByDni(this.mapearDeForm()));
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(this, e.getMessage());
+		}
 		
 	}
 	
 	protected void agregarClick(){
+	try{
 		ctrl.add(this.mapearDeForm());
+	} catch (Exception e) {
+		JOptionPane.showMessageDialog(this, e.getMessage());
+	}
 	}
 	
 	protected void borrarClick(){
+		try{
 		ctrl.delete(this.mapearDeForm());
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(this, e.getMessage());
+		}
 	}
 	
 	protected void modificarClick(){
+		try{
 		ctrl.update(this.mapearDeForm());
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(this, e.getMessage());
+		}
 	}
 
 	
