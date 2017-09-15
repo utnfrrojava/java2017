@@ -1,0 +1,7 @@
+Paso 1: Crear un Dynamic Web Project
+Paso 2: Descargar el apache tomcat
+Paso 3: Crear el server runtime
+Paso 4: Agregarlo en el build path -> libraries -> server runtime del proyecto
+Paso 5: Agregar librerías a WebContent -> WEB-INF -> lib 
+Paso 6: Copiar las clases y hacer serializable las entidades.
+Paso 7: Crear páginas web y servlets 
