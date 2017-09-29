@@ -7,20 +7,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import controlers.CtrlABMPersona;
-import entity.Persona;
-
 /**
- * Servlet implementation class Start
+ * Servlet implementation class Reservas
  */
-@WebServlet({ "/Start", "/start" })
-public class Start extends HttpServlet {
+@WebServlet({ "/Reservas", "/reservas", "/reserva", "/Reserva" })
+public class Reservas extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
-     * Default constructor. 
+     * @see HttpServlet#HttpServlet()
      */
-    public Start() {
+    public Reservas() {
+        super();
         // TODO Auto-generated constructor stub
     }
 
@@ -36,30 +34,22 @@ public class Start extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		try {
-			String user=request.getParameter("user");
-			String pass=request.getParameter("pass");
-			
-			Persona per=new Persona();
-			per.setUser(user);
-			per.setPass(pass);
-			
-			CtrlABMPersona ctrl= new CtrlABMPersona();
-			
-			Persona pers=ctrl.login(per);
-			
-			request.setAttribute("listaPersonas", ctrl.getAll());
-			
-			request.getSession().setAttribute("user", pers);
-			
-			request.getRequestDispatcher("WEB-INF/welcome.jsp").forward(request, response);
-			//response.getWriter().append(user).append(" ").append(pass);
-			
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		//doGet(request, response);
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+	/**
+	 * @see HttpServlet#doPut(HttpServletRequest, HttpServletResponse)
+	 */
+	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+	}
+
+	/**
+	 * @see HttpServlet#doDelete(HttpServletRequest, HttpServletResponse)
+	 */
+	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 	}
 
 }

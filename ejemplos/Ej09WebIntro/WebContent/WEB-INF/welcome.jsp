@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="entity.Persona"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -8,6 +9,21 @@
 <title>Insert title here</title>
 </head>
 <body>
+	
 	<h1>Bienvenido <%=((Persona)session.getAttribute("user")).getNombre() %></h1>
+	<table>
+		<%
+			ArrayList<Persona>listaPers= (ArrayList<Persona>)request.getAttribute("listaPersonas");
+			for(Persona p : listaPers){
+		%>
+		<tr>
+			<td><%=p.getDni() %></td>
+			<td><%=p.getApellido() %></td>
+			<td><%=p.getNombre() %></td>
+		</tr>
+		<%
+			}
+		%>
+	</table>
 </body>
 </html>
