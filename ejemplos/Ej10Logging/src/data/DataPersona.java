@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
+import org.apache.logging.log4j.Level;
+
 import java.security.KeyStore.ProtectionParameter;
 import java.sql.*;
 
@@ -38,8 +40,8 @@ public class DataPersona {
 				}
 			}
 		} catch (SQLException e) {
-			
-			throw e;
+			AppDataException ade=new AppDataException(e, "Error al recuperar listado de Personas.\n"+e.getSQLState()+":"+e.getMessage(), Level.WARN);
+			throw ade;
 		} catch (AppDataException ade){
 			throw ade;
 		}

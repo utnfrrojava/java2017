@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import controlers.CtrlABMPersona;
 import entity.Persona;
+import util.AppDataException;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -20,12 +21,13 @@ import org.apache.logging.log4j.Level;
 @WebServlet({ "/Start", "/start" })
 public class Start extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	private Logger logger;
     /**
      * Default constructor. 
      */
     public Start() {
-        // TODO Auto-generated constructor stub
+    	logger = LogManager.getLogger(getClass());
+		
     }
 
 	/**
@@ -42,9 +44,6 @@ public class Start extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			
-			Logger logger = LogManager.getLogger(getClass());
-			logger.error("This is an error");
-			
 			String user=request.getParameter("user");
 			String pass=request.getParameter("pass");
 			
@@ -56,7 +55,13 @@ public class Start extends HttpServlet {
 			
 			Persona pers=ctrl.login(per);
 			
-			request.setAttribute("listaPersonas", ctrl.getAll());
+			try {
+				request.setAttribute("listaPersonas", ctrl.getAll());
+			} catch (AppDataException ade) {
+				request.setAttribute("Error", ade.getMessage());
+			} catch (Exception e) {
+				response.setStatus(502);
+			}
 			
 			request.getSession().setAttribute("user", pers);
 			
