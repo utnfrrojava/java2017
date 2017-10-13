@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration xmlns="http://logging.apache.org/log4j/2.0/config">
+
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%style{%date{DEFAULT}}{yellow}
+                %highlight{%-5level}{FATAL=bg_red, ERROR=red, WARN=yellow, INFO=green}
+                %message%n"/>
+        </Console>
+        <File name="ERROR" fileName="${sys:catalina.home}/logs/Ej10-error.log" append="true">
+            <PatternLayout pattern="%-5p | %d{yyyy-MM-dd HH:mm:ss} | %C{2} (%F:%L) - %m%n"/>
+        </File>
+        <File name="DEBUG" fileName="${sys:catalina.home}/logs/Ej10-debug.log" append="true">
+            <PatternLayout pattern="%-5p | %d{yyyy-MM-dd HH:mm:ss} | %C{2} (%F:%L) - %m%n"/>
+        </File>
+        <File name="TRACE" fileName="${sys:catalina.home}/logs/Ej10-trace.log" append="true">
+            <PatternLayout pattern="%-5p | %d{yyyy-MM-dd HH:mm:ss} | %C{2} (%F:%L) - %m%n"/>
+        </File>
+        <File name="SERVLETS" fileName="${sys:catalina.home}/logs/Ej10-servlet-info.log" append="true">
+            <PatternLayout pattern="%-5p | %d{yyyy-MM-dd HH:mm:ss} | %C{2} (%F:%L) - %m%n"/>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        
+
+        <Root additivity="TRUE" level="ALL">
+            <AppenderRef ref="STDOUT" level="ERROR"/>
+            <AppenderRef ref="ERROR" level="ERROR"/>
+            <AppenderRef ref="DEBUG" level="DEBUG"/>
+            <AppenderRef ref="TRACE" level="INFO"/>
+        </Root>
+
+        <Logger name="servlet" level="INFO">
+            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="SERVLETS"/>
+        </Logger>
+    </Loggers>
+
+</Configuration>

@@ -1,0 +1,13 @@
+Paso 1: Crear un Dynamic Web Project. 
+	Importante: elegir con Dynamic web module version 3 o superior
+Paso 2: Descargar el apache tomcat
+	Importante: Primero tratar de crear un nuevo server y ver cual es la última versión que soporta eclipse
+				Descargar tomcat core de esa versión por ejemplo para 8.0 -> http://tomcat.apache.org/download-80.cgi
+Paso 3: Crear el server runtime
+Paso 4: Agregarlo en el proyecto en build path -> libraries -> server runtime del proyecto
+Paso 5: Agregar librerías a WebContent -> WEB-INF -> lib 
+	Por ejemplo la librería del conector de MySql
+	Importante: No es necesario agregar las librerías al build path, eclipse lo hace solo.
+Paso 6: Copiar las clases y packages de las capas entidades, data y controles en el proyecto en Java Resources/src
+Paso 7: Hacer serializable las entidades asegurandose que sean Java Bean e implementando la interfaz Serializable.
+Paso 8: Crear páginas web y servlets
