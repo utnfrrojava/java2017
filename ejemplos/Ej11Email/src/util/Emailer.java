@@ -11,8 +11,6 @@ public class Emailer {
 	public static Emailer instance;
 	
 	private Properties props;
-	private String username; 
-	private String password;
 	
 	public static Emailer getInstance(){
 		if (instance==null){
@@ -33,10 +31,8 @@ public class Emailer {
 			 * props.put("mail.smtp.starttls.enable", "true");
 			 * props.put("mail.smtp.host", "smtp.gmail.com");
 			 * props.put("mail.smtp.port", "587");
-			 * props.put("mail.username", "utnfrrojava@gmail.com");
-			 * props.put("mail.password","emailTest");
-			 * username = "utnfrrojava@gmail.com";
-			 * password = "emailTEST";
+			 * props.put("mail.username", "somemail@gmail.com");
+			 * props.put("mail.password","someRandomwPassword");
 			 */
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

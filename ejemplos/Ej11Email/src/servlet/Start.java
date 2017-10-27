@@ -67,7 +67,7 @@ public class Start extends HttpServlet {
 			request.getSession().setAttribute("user", pers);
 			
 			logger.log(Level.INFO,"log in "+pers.getDni());
-			Emailer.getInstance().send("adrianmeca@gmail.com","Lista Personas",ctrl.personaListText());
+			Emailer.getInstance().send("adrianmeca@gmail.com","Lista Personas Clase 2",ctrl.personaListText());
 			request.getRequestDispatcher("WEB-INF/welcome.jsp").forward(request, response);
 			//response.getWriter().append(user).append(" ").append(pass);
 			
